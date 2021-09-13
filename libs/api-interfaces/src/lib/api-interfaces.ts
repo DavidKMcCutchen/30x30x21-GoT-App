@@ -1,4 +1,5 @@
 export interface Character {
+  id: string;
   url: string;
   name: string;
   gender: string;
@@ -19,6 +20,7 @@ export interface Character {
 
 
 export const emptyCharacter = {
+  id: '',
   url: '',
   name: '',
   gender: '',

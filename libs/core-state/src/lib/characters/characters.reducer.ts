@@ -15,7 +15,7 @@ export interface CharacterPartialState {
     readonly [CHARACTER_FEATURE_KEY]: CharacterState
 };
 
-export const characterAdapter: EntityAdapter<Character> = createEntityAdapter<Character>({ selectId: (character) => character.url });;
+export const characterAdapter: EntityAdapter<Character> = createEntityAdapter<Character>({ selectId: (r) => r.url });;
 
 export const initialCharacterState: CharacterState = characterAdapter.getInitialState(
     {

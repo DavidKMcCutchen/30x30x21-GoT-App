@@ -16,9 +16,7 @@ export class CharactersService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<Character[]> {
-    return this.http.get<CharacterPagination>(this.getUrl()).pipe(
-      map((response) => response.results)
-    );
+    return this.http.get<Character[]>(this.getUrl());
   };
 
   getOne(id: string): Observable<Character> {

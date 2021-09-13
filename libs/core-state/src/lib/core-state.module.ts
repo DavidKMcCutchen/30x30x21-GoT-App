@@ -25,7 +25,7 @@ const storeConfig: RootStoreConfig<any> = {
     CoreDataModule,
     StoreModule.forRoot(reducers, storeConfig),
     EffectsModule.forRoot([CharacterEffects]),
-    StoreDevtoolsModule.instrument({ name: store_name })
+    StoreDevtoolsModule.instrument({ name: 'store_name' })
   ],
   providers: []
 })
