@@ -1,0 +1,212 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>
+        <span *ngIf="currentCharacter.url; else elseBlock">{{
+          originalTitle
+        }}</span>
+        <ng-template #elseBlock>Create a Character</ng-template>
+      </h1>
+    </mat-card-title>
+  </mat-card-header>
+  <form
+    [formGroup]="form"
+    #formDirective="ngForm"
+    (ngSubmit)="save(formDirective)"
+  >
+    <mat-card-content>
+      <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+        <mat-label>URL</mat-label>
+        <input
+          matInput
+          placeholder="URL"
+          formControlName="url"
+          type="text"
+          name="url"
+        />
+      </mat-form-field>
+
+      
+
+      <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label> Name</mat-label>
+          <input
+            matInput
+            placeholder="Name"
+            formControlName="name"
+            type="text"
+            name="name"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label> Gender</mat-label>
+          <input
+            matInput
+            placeholder="Gender"
+            formControlName="gender"
+            type="text"
+            name="gender"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label> Culture</mat-label>
+          <input
+            matInput
+            placeholder="Culture"
+            formControlName="culture"
+            type="text"
+            name="culture"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label> Born</mat-label>
+          <input
+            matInput
+            placeholder="Born"
+            formControlName="born"
+            type="text"
+            name="born"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label> Died</mat-label>
+          <input
+            matInput
+            placeholder="Died"
+            formControlName="died"
+            type="text"
+            name="died"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label> Titles</mat-label>
+          <input
+            matInput
+            placeholder="Titles"
+            formControlName="titles"
+            type="text"
+            name="titles"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label> Aliases</mat-label>
+          <input
+            matInput
+            placeholder="Aliases"
+            formControlName="aliases"
+            type="text"
+            name="aliases"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label> Father</mat-label>
+          <input
+            matInput
+            placeholder="Father"
+            formControlName="father"
+            type="text"
+            name="father"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label> Mother</mat-label>
+          <input
+            matInput
+            placeholder="Mother"
+            formControlName="mother"
+            type="text"
+            name="mother"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label> Spouse</mat-label>
+          <input
+            matInput
+            placeholder="Spouse"
+            formControlName="spouse"
+            type="text"
+            name="spouse"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label> Allegiances</mat-label>
+          <input
+            matInput
+            placeholder="Allegiances"
+            formControlName="allegiances"
+            type="text"
+            name="allegiances"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label> Books</mat-label>
+          <input
+            matInput
+            placeholder="Books"
+            formControlName="books"
+            type="text"
+            name="books"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label> POV Books</mat-label>
+          <input
+            matInput
+            placeholder="POV Books"
+            formControlName="povBooks"
+            type="text"
+            name="povBooks"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label> TV Series</mat-label>
+          <input
+            matInput
+            placeholder="TV Series"
+            formControlName="tvSeries"
+            type="text"
+            name="tvSeries"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label> Played By</mat-label>
+          <input
+            matInput
+            placeholder="Played By"
+            formControlName="playedBy"
+            type="text"
+            name="playedBy"
+          />
+        </mat-form-field>
+
+      
+
+      <section class="full-width">
+      </section>
+
+      
+
+
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-button color="primary">
+        {{ originalTitle ? 'Save' : 'Create' }}
+      </button>
+      <button type="button" mat-button (click)="cancel()">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

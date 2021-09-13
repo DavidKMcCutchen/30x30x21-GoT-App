@@ -1,0 +1,39 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Game of Thrones Characters</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let character of characters" data-test="character-list-item" (click)="selected.emit(character)">
+        <h3 matLine>{{character.url}}</h3>
+        <h3 matLine>{{character.name}}</h3>
+        <h3 matLine>{{character.gender}}</h3>
+        <h3 matLine>{{character.culture}}</h3>
+        <h3 matLine>{{character.born}}</h3>
+        <h3 matLine>{{character.died}}</h3>
+        <h3 matLine>{{character.titles}}</h3>
+        <h3 matLine>{{character.aliases}}</h3>
+        <h3 matLine>{{character.father}}</h3>
+        <h3 matLine>{{character.mother}}</h3>
+        <h3 matLine>{{character.spouse}}</h3>
+        <h3 matLine>{{character.allegiances}}</h3>
+        <h3 matLine>{{character.books}}</h3>
+        <h3 matLine>{{character.povBooks}}</h3>
+        <h3 matLine>{{character.tvSeries}}</h3>
+        <h3 matLine>{{character.playedBy}}</h3>
+        
+
+        <button mat-icon-button (click)="characterViewed.emit(character.url); $event.stopImmediatePropagation()">
+          <mat-icon *ngIf="!readonly">chevron_left</mat-icon>
+        </button>
+
+
+        <button mat-icon-button (click)="deleted.emit(character); $event.stopImmediatePropagation()">
+          <mat-icon *ngIf="!readonly">delete</mat-icon>
+        </button>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>

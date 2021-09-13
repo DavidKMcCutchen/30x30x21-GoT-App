@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="col-50" layout="row" layout-align="center center">
+      <got-app-character-list
+        [characters]="allCharacters$ | async"
+        (selected)="selectCharacter($event)"
+        (deleted)="deleteCharacter($event)"
+        (characterViewed)="viewCharacter($event)"
+      ></got-app-character-list>
+    </div>
+    <div class="col-50" layout="row" layout-align="center center">
+      <got-app-character-details
+        [character]="selectedCharacter$ | async"
+        (saved)="saveCharacter($event)"
+        (cancelled)="resetCharacter()"
+        [form]="form"
+      ></got-app-character-details>
+    </div>
+  </div>
